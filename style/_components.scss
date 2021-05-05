@@ -1,0 +1,362 @@
+// TYPOGRAPHY
+.primary-heading {
+  font-size: 5rem;
+  font-family: "Noto Serif", serif;
+  color: var(--color-white);
+
+  @include respond(600px) {
+    font-size: 4rem;
+  }
+
+  @include respond(360px) {
+    font-size: 3.5rem;
+  }
+
+}
+
+.secondary-heading {
+    font-size: 4.5rem;
+    font-family: "Noto Serif", serif;
+    margin-bottom: 2rem;
+
+    @include respond(600px) {
+        font-size: 3.5rem;
+      }
+}
+
+.tertiary-heading {
+    font-size: 2rem;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.5em;
+    margin-bottom: 1.5rem;
+    transform: translateX(-4rem);
+
+    @include respond(450px) {
+        transform: translateX(0);
+        font-size: 1.5rem;
+      }
+  
+    &::before {
+      content: "";
+      display: inline-block;
+      background-color: var(--color-primary);
+      width: 6rem;
+      height: 0.2rem;
+      margin-right: 2rem;
+      margin-bottom: 0.6rem;
+    }
+  }
+
+.fourth-heading {
+    font-size: 2.5rem;
+    font-size: 2rem;
+    color: var(--color-primary-darker);
+    text-transform: uppercase;
+    letter-spacing: 0.5em;
+    margin-bottom: .5rem;
+}
+
+.fifth-heading {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+
+    margin-bottom: 2rem;
+
+    &--white {
+        color: var(--color-white);
+    }
+}
+
+.paragraph {
+    color: var(--color-grey-light);
+    font-size: 1.6rem;
+    line-height: 1.8em;
+    font-family: var(--font-libre);
+}
+
+.description {
+    font-size: 2rem;
+    font-weight: 600;
+    font-family: "Noto Serif", serif;
+}
+
+
+// BUTTONS
+.btn-1 {
+
+    &:link,
+    &:visited {
+        display: block;
+        text-decoration: none;
+        color: var(--color-white);
+        border: .3rem solid var(--color-white);
+        padding: 1rem 2rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        transition: all .3s;
+        margin-bottom: 1rem;
+    }
+
+    &:hover {
+        color: var(--color-grey);
+        background-color: var(--color-white);
+    }
+
+    @include respond(820px) {
+        margin-top: 2rem;
+        &:not(:last-child){
+          margin-right: 2rem;
+        }
+      }
+
+      @include respond(350px) {
+       margin: 0;
+       width: 100%;
+       text-align: center;
+       &:not(:last-child){
+        margin-top: 2rem;
+      }
+
+      }
+}
+
+.btn-2 {
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: var(--color-primary-darker);
+    padding: 1rem 6rem;
+    width: 100%;
+    color: var(--color-black);
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: .5rem;
+    border: none;
+
+    &:hover {
+        outline: none;
+        cursor: pointer;
+    }
+}
+
+.btn-text {
+    display: inline-block;
+
+    &:link,
+    &:visited {
+        text-decoration: none;
+        color: var(--color-white);
+        text-transform: uppercase;
+        font-size: 1.2rem;
+        letter-spacing: .5em;
+        font-weight: 700;
+    }
+
+    &__arrow {
+        color: var(--color-primary);
+        font-size: 1.3rem;
+    }
+}
+
+.btn-toggle {
+    background-color: transparent;
+    width: 6rem;
+    height: 6rem;
+
+    border: none;
+    border-radius: 2rem;
+
+    &:hover {
+        outline: none;
+        cursor: pointer;
+    }
+
+    &__bar {
+        display: block;
+        background-color: var(--color-white);
+        height: .3rem;
+        width: 4rem;
+        margin: auto;
+
+        &:not(:last-child) {
+            margin-bottom: 1rem;
+        }
+    }
+
+    &--active .btn-toggle__bar:nth-child(1) {
+        transform: rotate(49deg);
+        margin-bottom: 0;
+    }
+    
+    &--active .btn-toggle__bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    &--active .btn-toggle__bar:nth-child(3) {
+        transform: rotate(-49deg);
+        margin-bottom: 0;
+    }
+}
+
+// NAV 
+.nav {
+    display: flex;
+    justify-content: space-between;
+
+    &__item {
+        list-style: none;
+    }
+
+    &__link {
+        display: inline-block;
+        transition: all .2s;
+
+        &:link,
+        &:visited {
+            color: var(--color-white);
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            box-shadow: var(--shadow-dark);
+        }
+
+        &--active:link,
+        &--active:visited {
+            color: var(--color-primary);
+        }
+
+        &:hover {
+            animation: 1s ease-in-out 0s infinite pullsate;
+        }
+    }
+
+    @include respond(600px) {
+        flex-direction: column;
+
+        position: absolute;
+        top: 40%;
+        left: 10%;
+    
+        &__item {
+            &:not(:last-child){
+                margin-bottom: 3rem;
+            }
+        }
+      }
+}
+
+// SECTION HEADER
+
+.section-header {
+    text-align: center;
+    margin-bottom: 6rem;
+
+    &--black {
+        color: var(--color-black);
+    }
+
+    &--white {
+        color: var(--color-white);
+    }
+}
+
+// CARD
+
+.card {
+    background-color: var(--color-white);
+    padding: 3rem 4rem;
+    border-radius: .5rem;
+    box-shadow: var(--shadow-light);
+    text-align: center;
+
+    &__img-box {
+        background-color: yellowgreen;
+        width: 60%;
+        height: 25rem;
+        margin: 0 auto 4rem;
+    }
+
+    &__btn {
+        margin-top: 2rem;
+    }
+}
+
+// FORM
+.form {
+    
+    &__group {
+        &:not(:last-child) {
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__input {
+        font-size: 1.5rem;
+        font-family: inherit;
+        color: var(--color-white);
+        padding: 1.5rem 1rem;
+        background-color: transparent;
+        border: none;
+        border-bottom: .5px solid var(--color-white);
+        width: 100%;
+        display: block;
+        transition: all .3s;
+
+        &::-webkit-input-placeholder {
+            font-size: 1.8rem;
+            font-family: var(--font-noto);
+          }
+
+        &:focus {
+            outline: none;
+            border-bottom: 1px solid var(--color-primary);
+          }
+      
+          &:focus:invalid {
+            color: red;
+          }
+    }
+
+    &__label {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    &__btn {
+        margin-top: 2rem;
+    }
+}
+
+
+// INFO
+.info {
+    text-align: start;
+
+
+    &__box {
+        margin-top: 4rem;
+    }
+
+    &__item {
+        font-family: var(--font-noto);
+        font-size: 1.6rem;
+    }
+
+    @include respond(800px) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        &__box {
+            flex: 0 0 25%;
+        }
+      }
+
+      @include respond(660px) {
+        &__box {
+            flex: 0 0 60%;
+        }
+      }
+}

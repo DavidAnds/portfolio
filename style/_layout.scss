@@ -1,0 +1,351 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+
+  padding: 3rem 4rem;
+
+  @include respond(600px) {
+    flex-wrap: wrap;
+  }
+
+
+  &__logo-box {
+    flex: 0 0 10%;
+    min-width: 11rem;
+    z-index: 1;
+
+    @include respond(1100px) {
+      flex: 0 0 13%
+    }
+
+    @include respond(800px) {
+      flex: 0 0 15%
+    }
+  }
+
+  &__logo {
+    width: 100%;
+  }
+
+  &__btn {
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1;
+
+    
+    @include respond(600px) {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &__nav {
+    flex: 0 0 25%;
+    transition: all .8s ease-in-out ;
+
+    @include respond(1100px) {
+      flex: 0 0 30%
+    }
+
+    @include respond(800px) {
+      flex: 0 0 40%
+    }
+
+    @include respond(600px) {
+      position: absolute;
+      opacity: 0;
+      top: -400%;
+      left: 0;
+      background-color: black;
+      width: 100%;
+      height: 30rem;
+    }
+
+    &--active {
+      top: 0;
+      opacity: 1;
+    }
+  }
+
+  &__fixed {
+      position: fixed;
+      padding: 1rem 4rem;
+      width: 100vw;
+      background-color: var(--color-black);
+  }
+}
+
+
+.home {
+  height: 100vh;
+  background-image: url("../image/pexels-adrien-olichon-2387793.jpg");
+  background-size: cover;
+  position: relative;
+
+  &__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 65%;
+    display: flex;
+    justify-content: space-between;
+
+    @include respond(1200px) {
+      width: 70%;
+      margin: auto;
+    }
+
+    @include respond(1050px) {
+      width: 80%;
+    }
+
+    @include respond(820px) {
+      flex-direction: column;
+    }
+
+    @include respond(450px) {
+      width: 95%;
+    }
+
+  }
+
+  &__btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    @include respond(820px) {
+      flex-direction: row;
+      justify-content: flex-start;
+      margin-top: 2rem;
+    }
+
+    @include respond(350px) {
+      flex-direction: column;
+    }
+  }
+
+  &__btn-text {
+    position: absolute;
+    top: 120%;
+    left: 0%;
+  }
+}
+
+
+.section-contact,
+.section-project,
+.section-about {
+  padding: 14rem 0;
+
+  &__content {
+    max-width: 120rem;
+    margin: 0 auto;
+  }
+
+  @include respond(1200px) {
+    padding: 10rem 0;
+  }
+
+  @include respond(850px) {
+    padding: 8rem 0;
+  }
+ 
+}
+.section-about {
+  background-color: var(--color-white);
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 4rem;
+
+    @include respond(600px) {
+      flex-direction: column;
+    }
+  }
+
+  &__about-me {
+    flex: 0 0 50%;
+  }
+
+  &__all-skills {
+    flex: 0 0 44%;
+
+    @include respond(600px) {
+     margin-top: 4rem;
+    }
+  }
+
+  &__skills {
+    list-style: none;
+  }
+
+  &__skill {
+    display: inline-block;
+    background-color: var(--color-primary-darker);
+    padding: 0.5rem 0.8rem 0.5rem 1rem;
+    font-style: var(--font-noto);
+    color: var(--color-black);
+    font-weight: 700;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+
+    &:not(:last-child) {
+      margin-right: 1rem;
+    }
+  }
+}
+
+.section-project {
+    background-color: var(--color-grey-lighter);
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 2rem;
+
+        @include respond(600px) {
+          flex-direction: column;
+          padding: 0 4rem;
+        }
+
+        
+        @include respond(400px) {
+          padding: 0 2rem;
+        }
+      }
+
+    
+
+    &__card {
+        flex: 0 0 48%;
+
+        @include respond(600px) {
+          &:not(:last-child) {
+            margin-bottom: 4rem;
+          }
+        }
+    }
+}
+
+.section-contact{
+  background-image: url('../image/pexels-adrien-olichon-2387818.jpg');
+  background-size: cover;
+  overflow: hidden;
+
+  &__content {
+    display: flex;
+    width: 90%;
+    margin: auto;
+
+
+    @include respond(800px) {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    @include respond(380px) {
+      width: 100%;
+    }
+  }
+
+  &__form {
+    flex: 0 0 58%;
+    background-color: rgba(black, .8);
+    padding: 2rem 4rem;
+    border-radius: 3px;
+    box-shadow: var(--shadow-dark);
+
+  }
+
+  &__infos {
+    flex: 0 0 40%;
+    text-align: center;
+    background-color: rgba(whitesmoke, .4);
+    padding: 2rem 4rem;
+    border-radius: 3px;
+    box-shadow: var(--shadow-dark);
+
+    @include respond(800px) {
+      margin-top: 4rem;
+    }
+    
+  }
+}
+
+.footer {
+  padding: 6rem 0;
+  background-color: var(--color-black);
+  overflow: hidden;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__logo-box {
+    max-width: 20rem;
+    width: 20%;
+    margin-bottom: 2rem;
+
+    @include respond(690px) {
+      width: 30%;
+    }
+
+    @include respond(420px) {
+      width: 40%;
+    }
+  }
+
+  &__logo {
+    width: 100%;
+  }
+
+  &__networks {
+    display: flex;
+    justify-content: space-between;
+    max-width: 40rem;
+    width: 40%;
+    padding: 2rem;
+
+    @include respond(690px) {
+      width: 60%;
+    }
+
+    @include respond(420px) {
+      width: 80%;
+    }
+
+    @include respond(420px) {
+      width: 95%;
+    }
+
+  }
+
+  &__network {
+    font-size: 1.6rem;
+    font-family: var(--font-libre);
+  }
+
+  &__link {
+    color: var(--color-white);
+    text-decoration: none;
+
+    display: flex;
+    align-items: center;
+  }
+
+  &__svg {
+    fill: currentColor;
+    display: inline-block;
+    margin-right: 2rem;
+  }
+}
