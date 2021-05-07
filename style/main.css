@@ -261,31 +261,52 @@ body {
   background-color: transparent;
   width: 6rem;
   height: 6rem;
+  cursor: pointer;
   border: none;
-  border-radius: 2rem;
+  border-radius: .5rem;
+  position: relative;
 }
 
-.btn-toggle:hover {
-  outline: none;
-  cursor: pointer;
+.btn-toggle__bars {
+  background-color: transparent;
+  width: 5rem;
+  height: 3.5rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  pointer-events: none;
 }
 
 .btn-toggle__bar {
-  display: block;
+  position: absolute;
   background-color: var(--color-white);
-  height: .3rem;
-  width: 4rem;
-  margin: auto;
+  width: 5rem;
+  height: .6rem;
+  border-radius: 1rem;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-transition: all .4s;
+  transition: all .4s;
 }
 
-.btn-toggle__bar:not(:last-child) {
-  margin-bottom: 1rem;
+.btn-toggle__bar:nth-child(1) {
+  top: 0%;
+}
+
+.btn-toggle__bar:nth-child(2) {
+  top: 50%;
+}
+
+.btn-toggle__bar:nth-child(3) {
+  top: 100%;
 }
 
 .btn-toggle--active .btn-toggle__bar:nth-child(1) {
-  -webkit-transform: rotate(49deg);
-          transform: rotate(49deg);
-  margin-bottom: 0;
+  top: 50%;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 
 .btn-toggle--active .btn-toggle__bar:nth-child(2) {
@@ -293,9 +314,9 @@ body {
 }
 
 .btn-toggle--active .btn-toggle__bar:nth-child(3) {
-  -webkit-transform: rotate(-49deg);
-          transform: rotate(-49deg);
-  margin-bottom: 0;
+  top: 50%;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 
 .nav {

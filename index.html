@@ -16,7 +16,7 @@
   </head>
   <body>
     <!-- HOME -->
-    <header class="home" id="home">
+    <header class="home section" id="home">
       <!-- NAVBAR -->
       <div class="navbar">
         <div class="navbar__logo-box">
@@ -27,21 +27,27 @@
           />
         </div>
         <div class="navbar__btn">
-          <button class="btn-toggle " id="btnToggle"><span class="btn-toggle__bar "></span><span class="btn-toggle__bar"></span><span class="btn-toggle__bar"></span></button>
+          <button class="btn-toggle " id="btnToggle">
+            <div class="btn-toggle__bars">
+              <div class="btn-toggle__bar"></div>
+              <div class="btn-toggle__bar"></div>
+              <div class="btn-toggle__bar"></div>
+            </div>
+          </button>
         </div>
         <nav class="navbar__nav">
           <ul class="nav">
             <li class="nav__item">
-              <a href="#home" class="nav__link nav__link--active">Home</a>
+              <a href="#home" class="nav__link nav__link--home nav__link--active">Home</a>
             </li>
             <li class="nav__item">
-              <a href="#about" class="nav__link">About</a>
+              <a href="#about" class="nav__link nav__link--about">About</a>
             </li>
             <li class="nav__item">
-              <a href="#project" class="nav__link">Project</a>
+              <a href="#project" class="nav__link nav__link--project">Project</a>
             </li>
             <li class="nav__item">
-              <a href="#contact" class="nav__link">Contact</a>
+              <a href="#contact" class="nav__link nav__link--contact">Contact</a>
             </li>
           </ul>
         </nav>
@@ -70,7 +76,7 @@
     <!-- Main start -->
     <main>
       <!-- SECTION ABOUT  -->
-      <section class="section-about" id="about">
+      <section class="section-about section" id="about">
         <div class="section-header">
           <h4 class="fourth-heading">About</h4>
           <h2 class="secondary-heading secondary-heading--black">Personal info</h2>
@@ -100,7 +106,7 @@
       </section>
       <!-- SECTION ABOUT END -->
       <!-- SECTION PROJECT  -->
-      <section class="section-project" id="project">
+      <section class="section-project section" id="project">
         <div class="section-header">
           <h4 class="fourth-heading">Works</h4>
           <h2 class="secondary-heading secondary-heading--black">My latests projects</h2>
@@ -143,7 +149,7 @@
       </section>
       <!-- SECTION PROJECT END -->
       <!-- SECTION CONTACT -->
-      <section class="section-contact" id="contact">
+      <section class="section-contact section" id="contact">
         <div class="section-header section-header--white">
           <h4 class="fourth-heading">Contact</h4>
           <h2 class="secondary-heading secondary-heading">Send a message</h2>
