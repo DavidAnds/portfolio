@@ -3,6 +3,13 @@
   font-size: 5rem;
   font-family: "Noto Serif", serif;
   color: var(--color-white);
+  
+  span {
+      display: inline-block;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-100px);
+  }
 
   @include respond(600px) {
     font-size: 4rem;
@@ -30,7 +37,9 @@
     text-transform: uppercase;
     letter-spacing: 0.5em;
     margin-bottom: 1.5rem;
-    transform: translateX(-4rem);
+    transform: translateX(-24rem);
+    opacity: 0;
+    visibility: hidden;
 
     @include respond(450px) {
         transform: translateX(0);
@@ -167,37 +176,40 @@
     cursor: pointer;
     border: none;
     border-radius: .5rem;
-    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
 
     &__bars {
         background-color: transparent;
         width: 5rem;
         height: 3.5rem;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        position: relative;
+        // top: 50%;
+        // left: 50%;
+        // transform: translate(-50%, -50%);
         pointer-events: none;
     }
 
     &__bar {
         position: absolute;
         background-color: var(--color-white);
-        width: 5rem;
-        height: .6rem;
+        width: 3.5rem;
+        height: .4rem;
         border-radius: 1rem;
         transform: translateY(-50%);
         transition: all .4s;
        
 
         &:nth-child(1) {
-        top: 0%;
+        top: 15%;
         }
         &:nth-child(2) {
         top: 50%;
         }
         &:nth-child(3) {
-        top: 100%;
+        top: 85%;
         }
     }
 
@@ -221,10 +233,11 @@
 // NAV 
 .nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
 
     &__item {
         list-style: none;
+        margin: 0 2rem;
     }
 
     &__link {
@@ -265,20 +278,6 @@
       }
 }
 
-// SECTION HEADER
-
-.section-header {
-    text-align: center;
-    margin-bottom: 6rem;
-
-    &--black {
-        color: var(--color-black);
-    }
-
-    &--white {
-        color: var(--color-white);
-    }
-}
 
 // CARD
 

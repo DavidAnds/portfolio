@@ -80,4 +80,18 @@ window.addEventListener("scroll", function () {
   })
 });
 
+// Home animation 
+var tl = gsap.timeline({
+  defaults: {
+    duration: .6,
+    ease: "power2",
+    autoAlpha: 1
+}
+})
 
+tl
+.to(".tertiary-heading", { x: -4})
+.to(".primary-heading span", { y: 0, stagger: .15})
+.to(".home__btn", { y: 0})
+.to(".home__btn-text", {})
+.to(".navbar", {})

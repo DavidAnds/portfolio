@@ -97,6 +97,14 @@ body {
   color: var(--color-white);
 }
 
+.primary-heading span {
+  display: inline-block;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: translateY(-100px);
+          transform: translateY(-100px);
+}
+
 @media only screen and (max-width: 600px) {
   .primary-heading {
     font-size: 4rem;
@@ -127,8 +135,10 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.5em;
   margin-bottom: 1.5rem;
-  -webkit-transform: translateX(-4rem);
-          transform: translateX(-4rem);
+  -webkit-transform: translateX(-24rem);
+          transform: translateX(-24rem);
+  opacity: 0;
+  visibility: hidden;
 }
 
 @media only screen and (max-width: 450px) {
@@ -264,26 +274,30 @@ body {
   cursor: pointer;
   border: none;
   border-radius: .5rem;
-  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 .btn-toggle__bars {
   background-color: transparent;
   width: 5rem;
   height: 3.5rem;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  position: relative;
   pointer-events: none;
 }
 
 .btn-toggle__bar {
   position: absolute;
   background-color: var(--color-white);
-  width: 5rem;
-  height: .6rem;
+  width: 3.5rem;
+  height: .4rem;
   border-radius: 1rem;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
@@ -292,7 +306,7 @@ body {
 }
 
 .btn-toggle__bar:nth-child(1) {
-  top: 0%;
+  top: 15%;
 }
 
 .btn-toggle__bar:nth-child(2) {
@@ -300,7 +314,7 @@ body {
 }
 
 .btn-toggle__bar:nth-child(3) {
-  top: 100%;
+  top: 85%;
 }
 
 .btn-toggle--active .btn-toggle__bar:nth-child(1) {
@@ -323,13 +337,14 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 .nav__item {
   list-style: none;
+  margin: 0 2rem;
 }
 
 .nav__link {
@@ -369,19 +384,6 @@ body {
   .nav__item:not(:last-child) {
     margin-bottom: 3rem;
   }
-}
-
-.section-header {
-  text-align: center;
-  margin-bottom: 6rem;
-}
-
-.section-header--black {
-  color: var(--color-black);
-}
-
-.section-header--white {
-  color: var(--color-white);
 }
 
 .card {
@@ -488,15 +490,14 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   margin: 0 auto;
   position: relative;
   z-index: 2;
+  opacity: 0;
+  visibility: hidden;
   padding: 3rem 4rem;
 }
 
@@ -507,12 +508,19 @@ body {
   }
 }
 
+@media only screen and (max-width: 400px) {
+  .navbar {
+    padding: 3rem 2rem;
+  }
+}
+
 .navbar__logo-box {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 10%;
           flex: 0 0 10%;
   min-width: 11rem;
   z-index: 1;
+  margin-right: auto;
 }
 
 @media only screen and (max-width: 1100px) {
@@ -539,6 +547,12 @@ body {
   opacity: 0;
   visibility: hidden;
   z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 @media only screen and (max-width: 600px) {
@@ -550,8 +564,8 @@ body {
 
 .navbar__nav {
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 25%;
-          flex: 0 0 25%;
+      -ms-flex: 0 0 40%;
+          flex: 0 0 40%;
   -webkit-transition: all .8s ease-in-out;
   transition: all .8s ease-in-out;
 }
@@ -594,6 +608,12 @@ body {
   padding: 1rem 4rem;
   width: 100vw;
   background-color: var(--color-black);
+}
+
+@media only screen and (max-width: 400px) {
+  .navbar__fixed {
+    padding: 1rem 2rem;
+  }
 }
 
 .home {
@@ -657,6 +677,10 @@ body {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  -webkit-transform: translateY(10rem);
+          transform: translateY(10rem);
+  opacity: 0;
+  visibility: hidden;
 }
 
 @media only screen and (max-width: 820px) {
@@ -685,6 +709,21 @@ body {
   position: absolute;
   top: 120%;
   left: 0%;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.section__header {
+  text-align: center;
+  margin-bottom: 6rem;
+}
+
+.section__header--black {
+  color: var(--color-black);
+}
+
+.section__header--white {
+  color: var(--color-white);
 }
 
 .section-contact,
